@@ -111,11 +111,18 @@
       <!--<el-radio :label="6">选项二</el-radio>-->
       <!--<el-radio :label="9">选项三</el-radio>-->
     <!--</el-radio-group>-->
-    <el-radio-group v-model="radio" size="small">
-      <el-radio-button label="成都"></el-radio-button>
-      <el-radio-button label="路线"></el-radio-button>
-      <el-radio-button label="泸州"></el-radio-button>
-    </el-radio-group>
+    <!--<el-radio-group v-model="radio" size="small">-->
+      <!--<el-radio-button label="成都"></el-radio-button>-->
+      <!--<el-radio-button label="路线"></el-radio-button>-->
+      <!--<el-radio-button label="泸州"></el-radio-button>-->
+    <!--</el-radio-group>-->
+    <!--<el-checkbox v-model="checked" true-label="sb" false-label="pl" @change="myfunc">备选项</el-checkbox>-->
+    <!--<el-checkbox :indeterminate="isIndeteminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>-->
+    <!--<div style="margin: 15px 0;"></div>-->
+    <!--<el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">-->
+      <!--<el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>-->
+    <!--</el-checkbox-group>-->
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
   </div>
 </template>
 
@@ -126,6 +133,7 @@ import ElMain from 'element-ui/packages/main/src/main'
 import ElAside from 'element-ui/packages/aside/src/main'
 import ElHeader from 'element-ui/packages/header/src/main'
 
+const cityOptions = ['上海', '北京', '广州', '深圳']
 export default {
   components: {
     ElHeader,
@@ -145,11 +153,39 @@ export default {
   //   }
   // }
   data: function () {
+    // return {
+    //   'radio': '3'
+    // }
+    // return {
+    //   checked: true
+    // }
+    // return {
+    //   checkAll: false,
+    //   checkedCities: ['上海', '北京'],
+    //   cities: cityOptions,
+    //   isIndeteminate: true
+    // }
     return {
-      'radio': '3'
+      input: ''
+    }
+  },
+  methods: {
+    handleCheckAllChange (val) {
+      this.checkedCities = val ? cityOptions : []
+      this.isIndeteminate = false
+    },
+    handleCheckedCitiesChange (value) {
+      console.log(value)
+      let checkCount = value.length
+      this.checkAll = checkCount === this.cities.length
+      this.isIndeteminate = checkCount > 0 && checkCount < this.cities.length
+    },
+    myfunc (value) {
+      console.log(value)
     }
   }
 }
+
 </script>
 
 <style lang='scss'>
