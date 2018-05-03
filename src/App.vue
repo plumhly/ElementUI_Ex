@@ -122,25 +122,46 @@
     <!--<el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">-->
       <!--<el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>-->
     <!--</el-checkbox-group>-->
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
+    <!--<el-input v-model="input" placeholder="请输入内容" clearable>-->
+      <!--<i slot="suffix" class="el-icon-date el-input__icon"></i>-->
+    <!--</el-input>-->
+    <!--<el-input placeholder="站稳发" type="textarea" :autosize="{minRows: 2, maxRows: 4}"></el-input>-->
+    <!--<el-input placeholder="请输入内容" v-model="input3">-->
+      <!--<template slot="prepend">HTTP://</template>-->
+    <!--</el-input>-->
+    <!--<el-input placeholder="请输入内容" v-model="input3">-->
+      <!--<template slot="append">.com</template>-->
+    <!--</el-input>-->
+    <!--<el-input placeholder="输入内容" v-model="input5"></el-input>-->
+    <el-input placeholder="请输入内容" class="input-with-select">
+      <el-select v-model="select" slot="prepend" placeholder="请选择">
+        <el-option label="餐厅名" value="1"></el-option>
+        <el-option label="订单号" value="2"></el-option>
+        <el-option label="用户密码" value="3"></el-option>
+      </el-select>
+      <el-button slot="append" icon="el-icon-search"></el-button>
+    </el-input>
   </div>
 </template>
 
 <script>
-import ElRow from 'element-ui/packages/row/src/row'
-import ElContainer from 'element-ui/packages/container/src/main'
-import ElMain from 'element-ui/packages/main/src/main'
-import ElAside from 'element-ui/packages/aside/src/main'
-import ElHeader from 'element-ui/packages/header/src/main'
+// import ElRow from 'element-ui/packages/row/src/row'
+// import ElContainer from 'element-ui/packages/container/src/main'
+// import ElMain from 'element-ui/packages/main/src/main'
+// import ElAside from 'element-ui/packages/aside/src/main'
+// import ElHeader from 'element-ui/packages/header/src/main'
+// import ElSelect from 'element-ui/packages/select/src/select'
 
 const cityOptions = ['上海', '北京', '广州', '深圳']
 export default {
   components: {
-    ElHeader,
-    ElAside,
-    ElMain,
-    ElContainer,
-    ElRow},
+    // ElSelect,
+    // ElHeader,
+    // ElAside,
+    // ElMain,
+    // ElContainer,
+    // ElRow
+  },
   name: 'App',
   // data: function () {
   //   const item = {
@@ -269,7 +290,10 @@ export default {
   /*.el-container:nth-child(7) .el-aside {*/
     /*line-height: 320px;*/
   /*}*/
-  .el-aside {
-    background-color: #409eff;
+  /*.el-aside {*/
+    /*background-color: #409eff;*/
+  /*}*/
+  .el-select {
+    background-color: red;
   }
 </style>
