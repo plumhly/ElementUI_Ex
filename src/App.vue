@@ -1,33 +1,33 @@
 <template>
-  <div class="app">
+  <div class='app'>
     <!-- <el-row>
-      <el-col :span="24">
-        <div class="grid-content bg-purple-dark"></div>
+      <el-col :span='24'>
+        <div class='grid-content bg-purple-dark'></div>
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
+      <el-col :span='12'><div class='grid-content bg-purple'></div></el-col>
+      <el-col :span='12'><div class='grid-content bg-purple-light'></div></el-col>
     </el-row>
     <el-row>
-      <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
-      <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span='8'><div class='grid-content bg-purple'></div></el-col>
+      <el-col :span='8'><div class='grid-content bg-purple-light'></div></el-col>
+      <el-col :span='8'><div class='grid-content bg-purple'></div></el-col>
     </el-row> -->
-    <!-- <el-row :gutter="100">
-      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+    <!-- <el-row :gutter='100'>
+      <el-col :span='6'><div class='grid-content bg-purple'></div></el-col>
+      <el-col :span='6'><div class='grid-content bg-purple'></div></el-col>
+      <el-col :span='6'><div class='grid-content bg-purple'></div></el-col>
+      <el-col :span='6'><div class='grid-content bg-purple'></div></el-col>
     </el-row>
-    <el-row :gutter="20">
-      <el-col :span="6"><div class="grid-content"></div></el-col>
+    <el-row :gutter='20'>
+      <el-col :span='6'><div class='grid-content'></div></el-col>
     </el-row> -->
-    <!-- <el-row :gutter="10" :type="flex" :align="top" :justify="start"> -->
-      <!-- <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="5" :offset="5"><div class="grid-content bg-purple"></div></el-col> -->
-    <!-- <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></el-col>
-    <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></el-col>
+    <!-- <el-row :gutter='10' :type='flex' :align='top' :justify='start'> -->
+      <!-- <el-col :span='5'><div class='grid-content bg-purple'></div></el-col>
+      <el-col :span='5' :offset='5'><div class='grid-content bg-purple'></div></el-col> -->
+    <!-- <el-col :xs='8' :sm='6' :md='4' :lg='3' :xl='1'><div class='grid-content bg-purple'></div></el-col>
+    <el-col :xs='4' :sm='6' :md='8' :lg='9' :xl='11'><div class='grid-content bg-purple'></div></el-col>
     </el-row> -->
     <!--<el-container>-->
       <!--<el-header>header</el-header>-->
@@ -37,7 +37,7 @@
     <!--<el-container>-->
       <!--<el-header>Header</el-header>-->
       <!--<el-container>-->
-        <!--<el-aside width="200px">Aside</el-aside>-->
+        <!--<el-aside width='200px'>Aside</el-aside>-->
         <!--<el-main>Main</el-main>-->
       <!--</el-container>-->
     <!--</el-container>-->
@@ -46,7 +46,7 @@
     <!--<el-container>-->
       <!--<el-header>Header</el-header>-->
       <!--<el-container>-->
-        <!--<el-aside width="200px">Aside</el-aside>-->
+        <!--<el-aside width='200px'>Aside</el-aside>-->
         <!--<el-container>-->
           <!--<el-main>Main</el-main>-->
           <!--<el-footer>Footer</el-footer>-->
@@ -57,90 +57,201 @@
     <!--<el-container>-->
       <!--<el-header></el-header>-->
       <!--<el-container>-->
-        <!--<el-aside width="200px" height="200px">Aside</el-aside>-->
+        <!--<el-aside width='200px' height='200px'>Aside</el-aside>-->
         <!--<el-main>Main</el-main>-->
       <!--</el-container>-->
       <!--<el-footer>Footer</el-footer>-->
     <!--</el-container>-->
-    <!--<el-container style="height: 500px; border: 1px solid #eee">-->
-      <!--<el-aside width="200px" style="background-color: rgb(238, 241, 246)">-->
-        <!--<el-menu :default-openeds="['1', '3']">-->
-          <!--<el-submenu index="1">-->
-            <!--<template slot="title"><i class="el-icon-message"></i>导航一</template>-->
+    <!--<el-container style='height: 500px; border: 1px solid #eee'>-->
+      <!--<el-aside width='200px' style='background-color: rgb(238, 241, 246)'>-->
+        <!--<el-menu :default-openeds='['1', '3']'>-->
+          <!--<el-submenu index='1'>-->
+            <!--<template slot='title'><i class='el-icon-message'></i>导航一</template>-->
             <!--<el-menu-item-group>-->
-              <!--<template slot="title">分组一</template>-->
-              <!--<el-menu-item index="1-1">选项1</el-menu-item>-->
-              <!--<el-menu-item index="1-2">选项2</el-menu-item>-->
+              <!--<template slot='title'>分组一</template>-->
+              <!--<el-menu-item index='1-1'>选项1</el-menu-item>-->
+              <!--<el-menu-item index='1-2'>选项2</el-menu-item>-->
             <!--</el-menu-item-group>-->
-            <!--<el-menu-item-group title="分组2">-->
-              <!--<el-menu-item index="1-3">选项3</el-menu-item>-->
+            <!--<el-menu-item-group title='分组2'>-->
+              <!--<el-menu-item index='1-3'>选项3</el-menu-item>-->
             <!--</el-menu-item-group>-->
-            <!--<el-submenu index="1-4">-->
-              <!--<template slot="title">选项4</template>-->
-              <!--<el-menu-item index="1-4-1">选项4-1</el-menu-item>-->
+            <!--<el-submenu index='1-4'>-->
+              <!--<template slot='title'>选项4</template>-->
+              <!--<el-menu-item index='1-4-1'>选项4-1</el-menu-item>-->
             <!--</el-submenu>-->
           <!--</el-submenu>-->
         <!--</el-menu>-->
         <!--<el-menu>-->
-          <!--<el-submenu index="1">-->
-            <!--<template slot="title"><i class="el-icon-message">选项一</i></template>-->
+          <!--<el-submenu index='1'>-->
+            <!--<template slot='title'><i class='el-icon-message'>选项一</i></template>-->
             <!--<el-menu-item-group>-->
-              <!--<el-menu-item index="1-1">选项1</el-menu-item>-->
-              <!--<el-menu-item index="1-2">选项2</el-menu-item>-->
+              <!--<el-menu-item index='1-1'>选项1</el-menu-item>-->
+              <!--<el-menu-item index='1-2'>选项2</el-menu-item>-->
             <!--</el-menu-item-group>-->
           <!--</el-submenu>-->
-          <!--<el-submenu index="2"></el-submenu>-->
+          <!--<el-submenu index='2'></el-submenu>-->
         <!--</el-menu>-->
       <!--</el-aside>-->
       <!--<el-main>-->
-        <!--<el-table :data="tableData">-->
-          <!--<el-table-column prop="date" label="如期" width="140">-->
+        <!--<el-table :data='tableData'>-->
+          <!--<el-table-column prop='date' label='如期' width='140'>-->
           <!--</el-table-column>-->
-          <!--<el-table-column prop="name" label="姓名" width="120">-->
+          <!--<el-table-column prop='name' label='姓名' width='120'>-->
           <!--</el-table-column>-->
-          <!--<el-table-column prop="address" label="地址">-->
+          <!--<el-table-column prop='address' label='地址'>-->
           <!--</el-table-column>-->
         <!--</el-table>-->
       <!--</el-main>-->
     <!--</el-container>-->
-    <!--<el-radio v-model="radio" disabled label="1">备选项</el-radio>-->
-    <!--<el-radio v-model="radio" label="2">备选项</el-radio>-->
-    <!--<input type="radio"/>-->
-    <!--<el-radio-group v-model="radio">-->
-      <!--<el-radio :label="3">选项一</el-radio>-->
-      <!--<el-radio :label="6">选项二</el-radio>-->
-      <!--<el-radio :label="9">选项三</el-radio>-->
+    <!--<el-radio v-model='radio' disabled label='1'>备选项</el-radio>-->
+    <!--<el-radio v-model='radio' label='2'>备选项</el-radio>-->
+    <!--<input type='radio'/>-->
+    <!--<el-radio-group v-model='radio'>-->
+      <!--<el-radio :label='3'>选项一</el-radio>-->
+      <!--<el-radio :label='6'>选项二</el-radio>-->
+      <!--<el-radio :label='9'>选项三</el-radio>-->
     <!--</el-radio-group>-->
-    <!--<el-radio-group v-model="radio" size="small">-->
-      <!--<el-radio-button label="成都"></el-radio-button>-->
-      <!--<el-radio-button label="路线"></el-radio-button>-->
-      <!--<el-radio-button label="泸州"></el-radio-button>-->
+    <!--<el-radio-group v-model='radio' size='small'>-->
+      <!--<el-radio-button label='成都'></el-radio-button>-->
+      <!--<el-radio-button label='路线'></el-radio-button>-->
+      <!--<el-radio-button label='泸州'></el-radio-button>-->
     <!--</el-radio-group>-->
-    <!--<el-checkbox v-model="checked" true-label="sb" false-label="pl" @change="myfunc">备选项</el-checkbox>-->
-    <!--<el-checkbox :indeterminate="isIndeteminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>-->
-    <!--<div style="margin: 15px 0;"></div>-->
-    <!--<el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">-->
-      <!--<el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>-->
+    <!--<el-checkbox v-model='checked' true-label='sb' false-label='pl' @change='myfunc'>备选项</el-checkbox>-->
+    <!--<el-checkbox :indeterminate='isIndeteminate' v-model='checkAll' @change='handleCheckAllChange'>全选</el-checkbox>-->
+    <!--<div style='margin: 15px 0;'></div>-->
+    <!--<el-checkbox-group v-model='checkedCities' @change='handleCheckedCitiesChange'>-->
+      <!--<el-checkbox v-for='city in cities' :label='city' :key='city'>{{city}}</el-checkbox>-->
     <!--</el-checkbox-group>-->
-    <!--<el-input v-model="input" placeholder="请输入内容" clearable>-->
-      <!--<i slot="suffix" class="el-icon-date el-input__icon"></i>-->
+    <!--<el-input v-model='input' placeholder='请输入内容' clearable>-->
+      <!--<i slot='suffix' class='el-icon-date el-input__icon'></i>-->
     <!--</el-input>-->
-    <!--<el-input placeholder="站稳发" type="textarea" :autosize="{minRows: 2, maxRows: 4}"></el-input>-->
-    <!--<el-input placeholder="请输入内容" v-model="input3">-->
-      <!--<template slot="prepend">HTTP://</template>-->
+    <!--<el-input placeholder='站稳发' type='textarea' :autosize='{minRows: 2, maxRows: 4}'></el-input>-->
+    <!--<el-input placeholder='请输入内容' v-model='input3'>-->
+      <!--<template slot='prepend'>HTTP://</template>-->
     <!--</el-input>-->
-    <!--<el-input placeholder="请输入内容" v-model="input3">-->
-      <!--<template slot="append">.com</template>-->
+    <!--<el-input placeholder='请输入内容' v-model='input3'>-->
+      <!--<template slot='append'>.com</template>-->
     <!--</el-input>-->
-    <!--<el-input placeholder="输入内容" v-model="input5"></el-input>-->
-    <el-input placeholder="请输入内容" class="input-with-select">
-      <el-select v-model="select" slot="prepend" placeholder="请选择">
-        <el-option label="餐厅名" value="1"></el-option>
-        <el-option label="订单号" value="2"></el-option>
-        <el-option label="用户密码" value="3"></el-option>
-      </el-select>
-      <el-button slot="append" icon="el-icon-search"></el-button>
-    </el-input>
+    <!--<el-input placeholder='输入内容' v-model='input5'></el-input>-->
+    <!--<el-input placeholder='请输入内容' class='input-with-select'>-->
+      <!--<el-select v-model='select' slot='prepend' placeholder='请选择'>-->
+        <!--<el-option label='餐厅名' value='1'></el-option>-->
+        <!--<el-option label='订单号' value='2'></el-option>-->
+        <!--<el-option label='用户密码' value='3'></el-option>-->
+      <!--</el-select>-->
+      <!--<el-button slot='append' icon='el-icon-search'></el-button>-->
+    <!--</el-input>-->
+    <!--<el-row class='demo-autocomplete'>-->
+      <!--<el-col :span='12'>-->
+        <!--<div class='sub-title'>激活即列出输入建议</div>-->
+        <!--<el-autocomplete-->
+          <!--class='inline-input'-->
+          <!--v-model='state1'-->
+          <!--:fetch-suggestions='querySearch'-->
+          <!--placeholder='请输入内容'-->
+          <!--@select='handleSelect'/>-->
+      <!--</el-col>-->
+    <!--</el-row>-->
+    <!--<el-autocomplete-->
+      <!--popper-class='my-autocomplete'-->
+      <!--v-model='state1'-->
+      <!--:fetch-suggestions='querySearch'-->
+      <!--placeholder='请输入内容'-->
+      <!--@select='handleSelect'>-->
+      <!--<i class='el-icon-edit el-input__icon' slot='suffix' @click='hanlde'></i>-->
+      <!--<template slot-scope='{ item }'>-->
+        <!--<div class='name'>{{item.value}}</div>-->
+        <!--<span class='addr'>{{item.address}}</span>-->
+      <!--</template>-->
+    <!--</el-autocomplete>-->
+    <!--<el-autocomplete-->
+      <!--popper-class='my-autocomplete'-->
+      <!--v-model='state1'-->
+      <!--:fetch-suggestions='querySearchAsyn'-->
+      <!--placeholder='请输入内容'-->
+      <!--@select='handleSelect'>-->
+    <!--</el-autocomplete>-->
+    <!--<el-input v-model="input" placeholder="请输入内容">-->
+      <!--<i class="el-icon-date" slot="prepend"></i>-->
+    <!--</el-input>-->
+    <!--<el-input-number v-model="num1" :step="2" :controls="false" controls-position="left" @change="handleChange" :min="1" :max="10" label="描述性文字"></el-input-number>-->
+    <!--<el-select v-model="value1" multiple placeholder="请选择" @change="change">-->
+      <!--<el-option v-for="item in items" :value="item.value" :key="item.lable" :label="item.value"></el-option>-->
+    <!--</el-select>-->
+    <!--<el-select v-model="value2" multiple placeholder="请选择">-->
+      <!--<el-option v-for="item in items" :value="item.value" :key="item.lable" :label="item.value"></el-option>-->
+    <!--</el-select>-->
+    <!--<el-select v-model="value" placeholder="请选择">-->
+      <!--<el-option-->
+        <!--v-for="item in cities"-->
+        <!--:key="item.value"-->
+        <!--:label="item.label"-->
+        <!--:value="item.value">-->
+        <!--<span style="float: left">{{item.label}}</span>-->
+        <!--<span style="float: right; color: red; font-size: 13px">{{item.value}}</span>-->
+      <!--</el-option>-->
+    <!--</el-select>-->
+    <!--<el-select :popper-append-to-body="false" v-model="value" auto-complete="on" multiple :collapse-tags="true" placeholder="请选择">-->
+      <!--<el-option-group-->
+        <!--v-for="group in options3"-->
+        <!--:key="group.label"-->
+        <!--:label="group.label">-->
+        <!--<el-option-->
+          <!--v-for="item in group.options"-->
+          <!--:key="item.value"-->
+          <!--:label="item.label"-->
+          <!--:value="item.value">-->
+        <!--</el-option>-->
+      <!--</el-option-group>-->
+    <!--</el-select>-->
+    <!--<el-cascader-->
+      <!--:options="options"-->
+      <!--v-model="selectedOptions"-->
+      <!--expand-trigger="hover"-->
+      <!--filterable-->
+      <!--@change="handleChange"></el-cascader>-->
+    <!--<el-switch-->
+      <!--v-model="value"-->
+      <!--active-text="按年付费"-->
+      <!--inactive-text="按月付费">-->
+    <!--</el-switch>-->
+    <!--<el-slider :step="10" v-model="value" :show-stops="true" :show-input="true"></el-slider>-->
+    <!--<el-slider v-model="value" range :show-stops="true" :max="10"></el-slider>-->
+    <!--<el-slider-->
+      <!--v-model="value"-->
+      <!--:vertical="true"-->
+      <!--height="200px"-->
+      <!--label="plum"></el-slider>-->
+    <!--<el-time-select-->
+      <!--v-model="value"-->
+      <!--:picker-options="{-->
+        <!--start: '08:30',-->
+        <!--step: '00:15',-->
+        <!--end: '18:00'-->
+      <!--}"></el-time-select>-->
+    <!--<el-time-select-->
+      <!--v-model="value1"-->
+      <!--:picker-options="{-->
+        <!--start: '08:30',-->
+        <!--step: '00:15',-->
+        <!--end: '18:00',-->
+        <!--minTime: value-->
+      <!--}"></el-time-select>-->
+    <!--<el-time-picker-->
+      <!--v-model="value"-->
+      <!--:picker-options="{selectableRange: '18:30:00 - 20:00:00'}"-->
+      <!--placeholder="任一时间点"-->
+      <!--arrow-control>-->
+    <!--</el-time-picker>-->
+    <!--<el-time-picker-->
+      <!--:is-range="true"-->
+      <!--v-model="value"-->
+      <!--range-separator="至"-->
+      <!--start-placeholder="开始时间"-->
+      <!--end-placeholder="结束时间"-->
+      <!--:editable="true"-->
+      <!--align="center">-->
+    <!--</el-time-picker>-->
   </div>
 </template>
 
@@ -152,9 +263,23 @@
 // import ElHeader from 'element-ui/packages/header/src/main'
 // import ElSelect from 'element-ui/packages/select/src/select'
 
-const cityOptions = ['上海', '北京', '广州', '深圳']
+// const cityOptions = ['上海', '北京', '广州', '深圳']
+
+// import ElSelect from "element-ui/packages/select/src/select";
+
+// import ElSlider from "element-ui/packages/slider/src/main";
+
+// import ElSlider from "element-ui/packages/slider/src/main";
+
+// import ElTimeSelect from "element-ui/packages/date-picker/src/picker/time-select";
+
 export default {
   components: {
+    // ElTimeSelect
+    // ElSlider
+    // ElSlider
+    // ElSelect
+    // ElSelect
     // ElSelect,
     // ElHeader,
     // ElAside,
@@ -173,7 +298,7 @@ export default {
   //     tableData: Array(20).fill(item)
   //   }
   // }
-  data: function () {
+  data: function() {
     // return {
     //   'radio': '3'
     // }
@@ -186,11 +311,105 @@ export default {
     //   cities: cityOptions,
     //   isIndeteminate: true
     // }
+    // return {
+    //   select: '',
+    //   state1: '',
+    //   restaurants: []
+    // }
+    // return {
+    //   num1: 2
+    // }
+    // return {
+    //   items: [
+    //     {
+    //       value: 2,
+    //       label: 2
+    //     },
+    //     {
+    //       value: 3,
+    //       label: 3
+    //     }
+    //   ],
+    //   value1: [],
+    //   value2: []
+    // }
+    // return {
+    //   cities: [{
+    //     value: 'Beijing',
+    //     label: '北京'
+    //   }, {
+    //     value: 'Shanghai',
+    //     label: '上海'
+    //   }, {
+    //     value: 'Nanjing',
+    //     label: '南京'
+    //   }, {
+    //     value: 'Chengdu',
+    //     label: '成都'
+    //   }, {
+    //     value: 'Shenzhen',
+    //     label: '深圳'
+    //   }, {
+    //     value: 'Guangzhou',
+    //     label: '广州'
+    //   }],
+    //   value: ''
+    // }
+    // return {
+    //   options3: [{
+    //     label: '热门城市',
+    //     options: [{
+    //       value: 'Shanghai',
+    //       label: '上海'
+    //     }, {
+    //       value: 'Beijing',
+    //       label: '北京'
+    //     }]
+    //   }, {
+    //     label: '城市名',
+    //     options: [{
+    //       value: 'Chengdu',
+    //       label: '成都'
+    //     }, {
+    //       value: 'Shenzhen',
+    //       label: '深圳'
+    //     }, {
+    //       value: 'Guangzhou',
+    //       label: '广州'
+    //     }, {
+    //       value: 'Dalian',
+    //       label: '大连'
+    //     }]
+    //   }],
+    //   value: []
+    // }
+    // return {
+    //   options: [{
+    //     value: 'zhinan',
+    //     label: '指南',
+    //     // disabled: true,
+    //     children: [{
+    //       value: 'shejiyuanze',
+    //       label: '设计原则',
+    //       children: [{
+    //         value: 'yizhi',
+    //         label: '一致'
+    //       }, {
+    //         value: 'fankui',
+    //         label: '反馈'
+    //       }]
+    //     }]
+    //   }],
+    //   // selectedOptions: ['zhinan', 'shejiyuanze']
+    //   selectedOptions: []
+    // }
     return {
-      input: ''
+      value: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
+      value1: ''
     }
   },
   methods: {
+    /*
     handleCheckAllChange (val) {
       this.checkedCities = val ? cityOptions : []
       this.isIndeteminate = false
@@ -203,8 +422,91 @@ export default {
     },
     myfunc (value) {
       console.log(value)
+    },
+    querySearch (queryString, cb) {
+      var rest = this.restaurants
+      var result = queryString ? rest.filter(this.createFilter(queryString)) : rest
+      cb(result)
+    },
+    querySearchAsyn (query, cb) {
+      var rest = this.restaurants
+      var result = query ? rest.filter(this.createFilter(query)) : rest
+      clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        cb(result)
+      }, 3000 * Math.random())
+    },
+    createFilter (queryString) {
+      return (restaurant) => {
+        return (restaurant.value.toLocaleLowerCase().indexOf(queryString.toLowerCase())) === 0
+      }
+    },
+    loadAll () {
+      return [
+        { 'value': '三全鲜食（北新泾店）', 'address': '长宁区新渔路144号' },
+        { 'value': 'Hot honey 首尔炸鸡（仙霞路）', 'address': '上海市长宁区淞虹路661号' },
+        { 'value': '新旺角茶餐厅', 'address': '上海市普陀区真北路988号创邑金沙谷6号楼113' },
+        { 'value': '泷千家(天山西路店)', 'address': '天山西路438号' },
+        { 'value': '胖仙女纸杯蛋糕（上海凌空店）', 'address': '上海市长宁区金钟路968号1幢18号楼一层商铺18-101' },
+        { 'value': '贡茶', 'address': '上海市长宁区金钟路633号' },
+        { 'value': '豪大大香鸡排超级奶爸', 'address': '上海市嘉定区曹安公路曹安路1685号' },
+        { 'value': '茶芝兰（奶茶，手抓饼）', 'address': '上海市普陀区同普路1435号' },
+        { 'value': '十二泷町', 'address': '上海市北翟路1444弄81号B幢-107' },
+        { 'value': '星移浓缩咖啡', 'address': '上海市嘉定区新郁路817号' },
+        { 'value': '阿姨奶茶/豪大大', 'address': '嘉定区曹安路1611号' },
+        { 'value': '新麦甜四季甜品炸鸡', 'address': '嘉定区曹安公路2383弄55号' },
+        { 'value': 'Monica摩托主题咖啡店', 'address': '嘉定区江桥镇曹安公路2409号1F，2383弄62号1F' },
+        { 'value': '浮生若茶（凌空soho店）', 'address': '上海长宁区金钟路968号9号楼地下一层' },
+        { 'value': 'NONO JUICE  鲜榨果汁', 'address': '上海市长宁区天山西路119号' },
+        { 'value': 'CoCo都可(北新泾店）', 'address': '上海市长宁区仙霞西路' },
+        { 'value': '快乐柠檬（神州智慧店）', 'address': '上海市长宁区天山西路567号1层R117号店铺' },
+        { 'value': 'Merci Paul cafe', 'address': '上海市普陀区光复西路丹巴路28弄6号楼819' },
+        { 'value': '猫山王（西郊百联店）', 'address': '上海市长宁区仙霞西路88号第一层G05-F01-1-306' },
+        { 'value': '枪会山', 'address': '上海市普陀区棕榈路' },
+        { 'value': '纵食', 'address': '元丰天山花园(东门) 双流路267号' },
+        { 'value': '钱记', 'address': '上海市长宁区天山西路' },
+        { 'value': '壹杯加', 'address': '上海市长宁区通协路' },
+        { 'value': '唦哇嘀咖', 'address': '上海市长宁区新泾镇金钟路999号2幢（B幢）第01层第1-02A单元' },
+        { 'value': '爱茜茜里(西郊百联)', 'address': '长宁区仙霞西路88号1305室' },
+        { 'value': '爱茜茜里(近铁广场)', 'address': '上海市普陀区真北路818号近铁城市广场北区地下二楼N-B2-O2-C商铺' },
+        { 'value': '鲜果榨汁（金沙江路和美广店）', 'address': '普陀区金沙江路2239号金沙和美广场B1-10-6' },
+        { 'value': '开心丽果（缤谷店）', 'address': '上海市长宁区威宁路天山路341号' },
+        { 'value': '超级鸡车（丰庄路店）', 'address': '上海市嘉定区丰庄路240号' },
+        { 'value': '妙生活果园（北新泾店）', 'address': '长宁区新渔路144号' },
+        { 'value': '香宜度麻辣香锅', 'address': '长宁区淞虹路148号' },
+        { 'value': '凡仔汉堡（老真北路店）', 'address': '上海市普陀区老真北路160号' },
+        { 'value': '港式小铺', 'address': '上海市长宁区金钟路968号15楼15-105室' },
+        { 'value': '蜀香源麻辣香锅（剑河路店）', 'address': '剑河路443-1' },
+        { 'value': '北京饺子馆', 'address': '长宁区北新泾街道天山西路490-1号' },
+        { 'value': '饭典*新简餐（凌空SOHO店）', 'address': '上海市长宁区金钟路968号9号楼地下一层9-83室' },
+        { 'value': '焦耳·川式快餐（金钟路店）', 'address': '上海市金钟路633号地下一层甲部' },
+        { 'value': '动力鸡车', 'address': '长宁区仙霞西路299弄3号101B' },
+        { 'value': '浏阳蒸菜', 'address': '天山西路430号' },
+        { 'value': '四海游龙（天山西路店）', 'address': '上海市长宁区天山西路' },
+        { 'value': '樱花食堂（凌空店）', 'address': '上海市长宁区金钟路968号15楼15-105室' },
+        { 'value': '壹分米客家传统调制米粉(天山店)', 'address': '天山西路428号' },
+        { 'value': '福荣祥烧腊（平溪路店）', 'address': '上海市长宁区协和路福泉路255弄57-73号' },
+        { 'value': '速记黄焖鸡米饭', 'address': '上海市长宁区北新泾街道金钟路180号1层01号摊位' },
+        { 'value': '红辣椒麻辣烫', 'address': '上海市长宁区天山西路492号' },
+        { 'value': '(小杨生煎)西郊百联餐厅', 'address': '长宁区仙霞西路88号百联2楼' },
+        { 'value': '阳阳麻辣烫', 'address': '天山西路389号' },
+        { 'value': '南拳妈妈龙虾盖浇饭', 'address': '普陀区金沙江路1699号鑫乐惠美食广场A13' }
+      ]
+    },
+    handleChange(value) {
+      console.log(value)
+    },
+    change(value) {
+      console.log(value)
+    },
+    formatTooltip(value) {
+      return value / 100.0
     }
+    */
   }
+  // mounted () {
+  //   this.restaurants = this.loadAll()
+  // }
 }
 
 </script>
@@ -293,7 +595,21 @@ export default {
   /*.el-aside {*/
     /*background-color: #409eff;*/
   /*}*/
-  .el-select {
-    background-color: red;
+  /*.el-select {*/
+    /*width: 130px;*/
+  /*}*/
+  .my-autocomplete {
+    li {
+      line-height: normal;
+      padding: 7px;
+      .name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .addr {
+        font-size: 12px;
+        color: #b4b4b4;
+      }
+    }
   }
 </style>
