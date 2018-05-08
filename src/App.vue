@@ -252,6 +252,40 @@
       <!--:editable="true"-->
       <!--align="center">-->
     <!--</el-time-picker>-->
+    <!--<el-date-picker-->
+      <!--v-model="value"-->
+      <!--align="right"-->
+      <!--type="date"-->
+      <!--:picker-options="options"-->
+      <!--placeholder="选择日期"></el-date-picker>-->
+    <!--<el-date-picker-->
+      <!--v-model="value"-->
+      <!--type="week"-->
+      <!--format="yyyy第 WW 周"-->
+      <!--placeholder="选择周"></el-date-picker>-->
+    <!---->
+    <!--<el-date-picker-->
+      <!--type="dates"-->
+      <!--v-model="value"-->
+      <!--placeholder="选择多个日期">-->
+    <!--</el-date-picker>-->
+    <!--<el-date-picker-->
+      <!--v-model="value"-->
+      <!--type="daterange"-->
+      <!--range-separator="至"-->
+      <!--start-placeholder="开始日期"-->
+      <!--unlink-panels-->
+      <!--:picker-options="options"-->
+      <!--end-placeholder="结束日期">-->
+    <!--</el-date-picker>-->
+    <el-date-picker
+      v-model="value"
+      type="daterange"
+      placeholder="选择日期"
+      format="yyyy 年 MM 月 dd 日"
+      :default-time="['00:00:00', '23:59:59']">
+    </el-date-picker>
+    <div>{{value}}</div>
   </div>
 </template>
 
@@ -404,8 +438,39 @@ export default {
     //   selectedOptions: []
     // }
     return {
-      value: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
-      value1: ''
+      // value: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
+      // value: '',
+      value: [],
+      value1: '',
+      // options: {
+      //   disabledDate(time) {
+      //     return time.getTime() < Date.now()
+      //   },
+      //   shortcuts: [{
+      //     text: '今天',
+      //     onClick(picker) {
+      //       picker.$emit('pick', new Date())
+      //     }
+      //   }, {
+      //     text: '昨天',
+      //     onClick(picker) {
+      //       const date = new Date()
+      //       date.setTime(date.getTime() - 360e0 * 1000 * 24)
+      //       picker.$emit('picker', date)
+      //     }
+      //   }]
+      // }
+      options: {
+        shortcuts: [{
+          text: '最近一周',
+          onClick(picker) {
+            const end = new Date()
+            const start = new Date()
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
+            picker.$emit('pick', [start, end])
+          }
+        }]
+      }
     }
   },
   methods: {
