@@ -278,14 +278,37 @@
       <!--:picker-options="options"-->
       <!--end-placeholder="结束日期">-->
     <!--</el-date-picker>-->
-    <el-date-picker
-      v-model="value"
-      type="daterange"
-      placeholder="选择日期"
-      format="yyyy 年 MM 月 dd 日"
-      :default-time="['00:00:00', '23:59:59']">
-    </el-date-picker>
-    <div>{{value}}</div>
+    <!--<el-date-picker-->
+      <!--v-model="value"-->
+      <!--type="datetime"-->
+      <!--placeholder="选择日期"-->
+      <!--format="yyyy 年 MM 月 dd 日"-->
+      <!--:default-time="['00:00:00', '23:59:59']">-->
+    <!--</el-date-picker>-->
+    <!--<div>{{value}}</div>-->
+    <el-upload
+      class="upload-demo"
+      action="https://jsonplaceholder.typicode.com/posts/"
+      :on-preview="handlePreview"
+      :on-remove="handlePreview"
+      :before-remove="beforeRemove"
+      :multiple="true"
+      :limit="3"
+      list-type="picture"
+      :on-exceed="handleExceed"
+      :file-list="fileList">
+      <el-button size="small" type="primary">点击上传</el-button>
+      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+    </el-upload>
+    <!--<el-upload-->
+      <!--class="avatar-uploader"-->
+      <!--action="https://jsonplaceholder.typicode.com/posts/"-->
+      <!--:show-file-list="false"-->
+      <!--:on-success="handleAvatarSuccess"-->
+      <!--:before-upload="beforeAvatarUpload">-->
+      <!--<img v-if="imageUrl" :src="imageUrl" class="avatar"/>-->
+      <!--<i v-else class="el-icon-plus avatar-uploader-icon"></i>-->
+    <!--</el-upload>-->
   </div>
 </template>
 
@@ -437,41 +460,46 @@ export default {
     //   // selectedOptions: ['zhinan', 'shejiyuanze']
     //   selectedOptions: []
     // }
+    // return {
+    //   value: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
+    //   value: '',
+    //   value: [],
+    //   value1: '',
+    //   options: {
+    //     disabledDate(time) {
+    //       return time.getTime() < Date.now()
+    //     },
+    //     shortcuts: [{
+    //       text: '今天',
+    //       onClick(picker) {
+    //         picker.$emit('pick', new Date())
+    //       }
+    //     }, {
+    //       text: '昨天',
+    //       onClick(picker) {
+    //         const date = new Date()
+    //         date.setTime(date.getTime() - 360e0 * 1000 * 24)
+    //         picker.$emit('picker', date)
+    //       }
+    //     }]
+    //   }
+    //   options: {
+    //     shortcuts: [{
+    //       text: '最近一周',
+    //       onClick(picker) {
+    //         const end = new Date()
+    //         const start = new Date()
+    //         start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
+    //         picker.$emit('pick', [start, end])
+    //       }
+    //     }]
+    //   }
     return {
-      // value: [new Date(2016, 9, 10, 8, 40), new Date(2016, 9, 10, 9, 40)],
-      // value: '',
-      value: [],
-      value1: '',
-      // options: {
-      //   disabledDate(time) {
-      //     return time.getTime() < Date.now()
-      //   },
-      //   shortcuts: [{
-      //     text: '今天',
-      //     onClick(picker) {
-      //       picker.$emit('pick', new Date())
-      //     }
-      //   }, {
-      //     text: '昨天',
-      //     onClick(picker) {
-      //       const date = new Date()
-      //       date.setTime(date.getTime() - 360e0 * 1000 * 24)
-      //       picker.$emit('picker', date)
-      //     }
-      //   }]
-      // }
-      options: {
-        shortcuts: [{
-          text: '最近一周',
-          onClick(picker) {
-            const end = new Date()
-            const start = new Date()
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
-            picker.$emit('pick', [start, end])
-          }
-        }]
-      }
+      fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
     }
+    // return {
+    //   imageUrl: ''
+    // }
   },
   methods: {
     /*
@@ -568,6 +596,12 @@ export default {
       return value / 100.0
     }
     */
+    handleExceed(files, fileList) {
+      this.$message.warning(`当前限制选择3个文件，本次选了${files.length}, 一共选择了${files.length + fileList.length}个文件`)
+    },
+    beforeRemove(file, fileList) {
+      return this.$confirm(`确定要溢出${file.name}?`)
+    }
   }
   // mounted () {
   //   this.restaurants = this.loadAll()
@@ -663,18 +697,41 @@ export default {
   /*.el-select {*/
     /*width: 130px;*/
   /*}*/
-  .my-autocomplete {
-    li {
-      line-height: normal;
-      padding: 7px;
-      .name {
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-      .addr {
-        font-size: 12px;
-        color: #b4b4b4;
-      }
-    }
+  /*.my-autocomplete {*/
+    /*li {*/
+      /*line-height: normal;*/
+      /*padding: 7px;*/
+      /*.name {*/
+        /*text-overflow: ellipsis;*/
+        /*overflow: hidden;*/
+      /*}*/
+      /*.addr {*/
+        /*font-size: 12px;*/
+        /*color: #b4b4b4;*/
+      /*}*/
+    /*}*/
+  /*}*/
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+  .avatar {
+    width: 178px;
+    height: 178px;
+    display: block;
   }
 </style>
