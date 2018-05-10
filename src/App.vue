@@ -286,20 +286,20 @@
       <!--:default-time="['00:00:00', '23:59:59']">-->
     <!--</el-date-picker>-->
     <!--<div>{{value}}</div>-->
-    <el-upload
-      class="upload-demo"
-      action="https://jsonplaceholder.typicode.com/posts/"
-      :on-preview="handlePreview"
-      :on-remove="handlePreview"
-      :before-remove="beforeRemove"
-      :multiple="true"
-      :limit="3"
-      list-type="picture"
-      :on-exceed="handleExceed"
-      :file-list="fileList">
-      <el-button size="small" type="primary">点击上传</el-button>
-      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-    </el-upload>
+    <!--<el-upload-->
+      <!--class="upload-demo"-->
+      <!--action="https://jsonplaceholder.typicode.com/posts/"-->
+      <!--:on-preview="handlePreview"-->
+      <!--:on-remove="handlePreview"-->
+      <!--:before-remove="beforeRemove"-->
+      <!--:multiple="true"-->
+      <!--:limit="3"-->
+      <!--list-type="picture"-->
+      <!--:on-exceed="handleExceed"-->
+      <!--:file-list="fileList">-->
+      <!--<el-button size="small" type="primary">点击上传</el-button>-->
+      <!--<div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>-->
+    <!--</el-upload>-->
     <!--<el-upload-->
       <!--class="avatar-uploader"-->
       <!--action="https://jsonplaceholder.typicode.com/posts/"-->
@@ -309,6 +309,47 @@
       <!--<img v-if="imageUrl" :src="imageUrl" class="avatar"/>-->
       <!--<i v-else class="el-icon-plus avatar-uploader-icon"></i>-->
     <!--</el-upload>-->
+  <!--<el-rate-->
+    <!--v-model="value"-->
+    <!--:colors="['#99A9BF', '#F7BA2A', '#FF9900']"-->
+    <!--:show-text="true">-->
+  <!--</el-rate>-->
+    <!--<el-rate-->
+      <!--v-model="value"-->
+      <!--disabled-->
+      <!--:max="10"-->
+      <!--:show-score="true"-->
+      <!--text-color="#ff9900"-->
+      <!--score-template="{value}">-->
+    <!--</el-rate>-->
+    <!--<el-color-picker-->
+      <!--:show-alpha="true"-->
+      <!--:predefine="colors"-->
+      <!--v-model="color">-->
+    <!--</el-color-picker>-->
+    <!--<el-color-picker-->
+      <!--v-model="color2">-->
+    <!--</el-color-picker>-->
+    <!--<el-transfer-->
+      <!--v-model="value"-->
+      <!--:data="data"></el-transfer>-->
+    <el-transfer
+      filterable
+      :filter-method="filterMethod"
+      filter-placeholder="请输入城市拼音"
+      :left-default-checked="[1]"
+      v-model="value"
+      :render-content="renderFunc"
+      :titles="['Souce', 'Target']"
+      :button-texts="['到左边', '到右边']"
+      :format="{
+        noChecked: '${total}',
+        hasChecked: '${checked}/${total}'
+      }"
+      :data="data">
+      <el-button slot="left-footer" size="small">操作</el-button>
+      <el-button slot="right-footer" size="small">操作</el-button>
+    </el-transfer>
   </div>
 </template>
 
@@ -330,8 +371,11 @@
 
 // import ElTimeSelect from "element-ui/packages/date-picker/src/picker/time-select";
 
+// import ElRate from "element-ui/packages/rate/src/main";
+
 export default {
   components: {
+    // ElRate
     // ElTimeSelect
     // ElSlider
     // ElSlider
@@ -494,12 +538,63 @@ export default {
     //       }
     //     }]
     //   }
-    return {
-      fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
-    }
+    // return {
+    //   fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+    // }
     // return {
     //   imageUrl: ''
     // }
+    // return {
+    //   value: 4.6
+    // }
+    // return {
+    //   color: '#409EFF',
+    //   color2: null,
+    //   colors: [
+    //     '#ff4500',
+    //     '#ff8c00',
+    //     '#ffd700',
+    //     '#90ee90',
+    //     '#00ced1',
+    //     '#1e90ff'
+    //   ]
+    //
+    // }
+    // let gennerateData = function() {
+    //   const data = []
+    //   for (let i = 1; i <= 15; i++) {
+    //     data.push({
+    //       key: i,
+    //       label: `备选项${i}`,
+    //       disabled: i % 4 === 0
+    //     })
+    //   }
+    //   return data
+    // }
+    // return {
+    //   data: gennerateData(),
+    //   value: [1, 4]
+    // }
+    let gennerateData = () => {
+      const data = []
+      const cities = ['上海', '北京', '广州', '深圳', '成都']
+      const pinyin = ['shanghai', 'beijing', 'guangzhou', 'shenzhen', 'chengdu']
+      cities.forEach((city, index) => {
+        data.push({
+          label: city,
+          key: index,
+          pinyin: pinyin[index]
+        })
+      })
+      return data
+    }
+    return {
+      value: [],
+      data: gennerateData(),
+      renderFunc(h, option) {
+        return (<span>{option.key} - {option.label}</span>)
+      }
+    }
   },
   methods: {
     /*
@@ -601,6 +696,9 @@ export default {
     },
     beforeRemove(file, fileList) {
       return this.$confirm(`确定要溢出${file.name}?`)
+    },
+    filterMethod(query, item) {
+      return item.pinyin.indexOf(query) > -1
     }
   }
   // mounted () {
