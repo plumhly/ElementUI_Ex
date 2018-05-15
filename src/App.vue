@@ -333,23 +333,140 @@
     <!--<el-transfer-->
       <!--v-model="value"-->
       <!--:data="data"></el-transfer>-->
-    <el-transfer
-      filterable
-      :filter-method="filterMethod"
-      filter-placeholder="请输入城市拼音"
-      :left-default-checked="[1]"
-      v-model="value"
-      :render-content="renderFunc"
-      :titles="['Souce', 'Target']"
-      :button-texts="['到左边', '到右边']"
-      :format="{
-        noChecked: '${total}',
-        hasChecked: '${checked}/${total}'
-      }"
-      :data="data">
-      <el-button slot="left-footer" size="small">操作</el-button>
-      <el-button slot="right-footer" size="small">操作</el-button>
-    </el-transfer>
+    <!--<el-transfer-->
+      <!--filterable-->
+      <!--:filter-method="filterMethod"-->
+      <!--filter-placeholder="请输入城市拼音"-->
+      <!--:left-default-checked="[1]"-->
+      <!--v-model="value"-->
+      <!--:render-content="renderFunc"-->
+      <!--:titles="['Souce', 'Target']"-->
+      <!--:button-texts="['到左边', '到右边']"-->
+      <!--:format="{-->
+        <!--noChecked: '${total}',-->
+        <!--hasChecked: '${checked}/${total}'-->
+      <!--}"-->
+      <!--:data="data">-->
+      <!--<el-button slot="left-footer" size="small">操作</el-button>-->
+      <!--<el-button slot="right-footer" size="small">操作</el-button>-->
+    <!--</el-transfer>-->
+    <!--<el-form :inline="true" ref="form" :model="form" label-width="80px">-->
+      <!--<el-form-item label="活动名称">-->
+        <!--<el-input v-model="form.name"></el-input>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="活动区域">-->
+        <!--<el-select v-model="form.region" placeholder="请选择活动区域">-->
+          <!--<el-option label="区域一" value="shanghai"></el-option>-->
+          <!--<el-option label="区域二" value="beijing"></el-option>-->
+        <!--</el-select>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="活动时间">-->
+        <!--<el-col :span="11">-->
+          <!--<el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%"></el-date-picker>-->
+        <!--</el-col>-->
+        <!--<el-col class="line" :span="2">-</el-col>-->
+        <!--<el-col :span="11">-->
+          <!--<el-time-picker type="fixed-time" placeholder="选择时间" v-model="form.date2" style="width: 100%"></el-time-picker>-->
+        <!--</el-col>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="配送时间">-->
+        <!--<el-switch v-model="form.delivery"></el-switch>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="活动性质">-->
+        <!--<el-checkbox-group v-model="form.type">-->
+          <!--<el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>-->
+          <!--<el-checkbox label="地推活动" name="type"></el-checkbox>-->
+          <!--<el-checkbox label="线下主题活动" name="type"></el-checkbox>-->
+          <!--<el-checkbox label="单纯品牌活动" name="type"></el-checkbox>-->
+        <!--</el-checkbox-group>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="特殊资源">-->
+        <!--<el-radio-group v-model="form.resource">-->
+          <!--<el-radio label="线上品牌商赞助"></el-radio>-->
+        <!--</el-radio-group>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="活动形式">-->
+        <!--<el-input type="textarea" v-model="form.desc"></el-input>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item>-->
+        <!--<el-button type="primary" @click="onSubmit">立即创建</el-button>-->
+        <!--<el-button>取消</el-button>-->
+      <!--</el-form-item>-->
+    <!--</el-form>-->
+    <!--<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">-->
+      <!--<el-form-item label="活动名称" prop="name">-->
+        <!--<el-input v-model="ruleForm.name"></el-input>-->
+      <!--</el-form-item>-->
+    <!--</el-form>-->
+    <!--<el-form :model="ruleForm" :status-icon="true" :rules="rules" ref="ruleForm" style="width: 100px">-->
+      <!--<el-form-item label="密码" prop="pass">-->
+        <!--<el-input type="password" v-model="ruleForm.pass" auto-complete="off"></el-input>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="确认密码" prop="checkPass">-->
+        <!--<el-input type="password" v-model="ruleForm.checkPass" auto-complete="off"></el-input>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="年龄" prop="age">-->
+        <!--<el-input v-model.number="ruleForm.age"></el-input>-->
+      <!--</el-form-item>-->
+    <!--</el-form>-->
+    <!--<el-form :model="forms" ref="forms" label-width="100px">-->
+      <!--<el-form-item-->
+        <!--prop="email"-->
+        <!--label="邮箱"-->
+        <!--:rules="[-->
+          <!--{required: true, message: '请输入邮箱地址', trigger: 'blur'},-->
+          <!--{type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change']}-->
+        <!--]">-->
+        <!--<el-input v-model="forms.email"></el-input>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item-->
+        <!--v-for="(domain, index) in forms.domains"-->
+        <!--:label="'域名' + index"-->
+        <!--:key="domain.key"-->
+        <!--:prop="'domains.' + index + '.value'"-->
+        <!--:rules="{-->
+          <!--required:true, message: '域名不能为空', trigger: 'blur'-->
+        <!--}">-->
+        <!--<el-input v-model="domain.value"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>-->
+      <!--</el-form-item>-->
+      <!--<el-form-item>-->
+        <!--<el-button @click="addDomain">新增域名</el-button>-->
+      <!--</el-form-item>-->
+    <!--</el-form>-->
+    <el-table
+      :data="tableData"
+      :stripe="true"
+      border
+      height="250"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+      <el-table-column
+        prop="tag"
+        label="标签"
+        width="100"
+        :filters="[{text: '家', value: '家'}, {text: '公司', value: '公司'}]"
+        :filter-method="filterTag"
+        filter-placement="bottom-end">
+        <template slot-scope="scope">
+          <el-tag
+            :type="scope.row.tag === '家' ? 'primary' : 'success'"
+            :disable-transitions="true">{{scope.row.tag}}</el-tag>
+        </template>
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
@@ -373,8 +490,16 @@
 
 // import ElRate from "element-ui/packages/rate/src/main";
 
+// import ElDatePicker from "element-ui/packages/date-picker/src/picker/date-picker";
+// import ElTimePicker from "element-ui/packages/date-picker/src/picker/time-picker";
+
+// import ElRadioGroup from "element-ui/packages/radio/src/radio-group";
+
 export default {
   components: {
+    // ElRadioGroup
+    // ElTimePicker,
+    // ElDatePicker
     // ElRate
     // ElTimeSelect
     // ElSlider
@@ -575,25 +700,132 @@ export default {
     //   data: gennerateData(),
     //   value: [1, 4]
     // }
-    let gennerateData = () => {
-      const data = []
-      const cities = ['上海', '北京', '广州', '深圳', '成都']
-      const pinyin = ['shanghai', 'beijing', 'guangzhou', 'shenzhen', 'chengdu']
-      cities.forEach((city, index) => {
-        data.push({
-          label: city,
-          key: index,
-          pinyin: pinyin[index]
-        })
-      })
-      return data
-    }
+    // let gennerateData = () => {
+    //   const data = []
+    //   const cities = ['上海', '北京', '广州', '深圳', '成都']
+    //   const pinyin = ['shanghai', 'beijing', 'guangzhou', 'shenzhen', 'chengdu']
+    //   cities.forEach((city, index) => {
+    //     data.push({
+    //       label: city,
+    //       key: index,
+    //       pinyin: pinyin[index]
+    //     })
+    //   })
+    //   return data
+    // }
+    // return {
+    //   value: [],
+    //   data: gennerateData(),
+    //   renderFunc(h, option) {
+    //     return (<span>{option.key} - {option.label}</span>)
+    //   }
+    // }
+    // return {
+    //   form: {
+    //     name: '',
+    //     region: '',
+    //     date1: '',
+    //     date2: '',
+    //     delivery: false,
+    //     type: [],
+    //     resource: '',
+    //     desc: ''
+    //   }
+    // }
+    // return {
+    //   ruleForm: {
+    //     name: ''
+    //   },
+    //   rules: {
+    //     name: [
+    //       {required: true, message: '请选择活动名称', trigger: 'blur'},
+    //       {min: 3, max: 5, message: '长度3-5字符', trigger: 'blur'}
+    //     ]
+    //   }
+    // }
+    // var checkAge = (rule, value, callback) => {
+    //   if (!value) {
+    //     return callback(new Error('年龄不能为空'))
+    //   }
+    //   setTimeout(() => {
+    //     if (!Number.isInteger(value)) {
+    //       callback(new Error('请输入数字'))
+    //     } else {
+    //       if (value < 18) {
+    //         callback(new Error('必须年满18岁'))
+    //       } else {
+    //         callback()
+    //       }
+    //     }
+    //   }, 1000)
+    // }
+    // var validatePass = (rule, value, callback) => {
+    //   if (value === '') {
+    //     callback(new Error('请输入密码'))
+    //   } else {
+    //     if (this.ruleForm.checkPass !== '') {
+    //       this.$refs.ruleForm.validateField('checkPass')
+    //     }
+    //     callback()
+    //   }
+    // }
+    // var validatePass2 = (rule, value, callback) => {
+    //   if (value === '') {
+    //     callback(new Error('请再次输入密码'))
+    //   } else if (value !== this.ruleForm.pass) {
+    //     callback(new Error('两次输入密码不一致！'))
+    //   } else {
+    //     callback()
+    //   }
+    // }
+    // return {
+    //   ruleForm: {
+    //     pass: '',
+    //     checkPass: '',
+    //     age: ''
+    //   },
+    //   rules: {
+    //     pass: [
+    //       {validator: validatePass, trigger: 'blur'}
+    //     ],
+    //     checkPass: [
+    //       {validator: validatePass2, trigger: 'blur'}
+    //     ],
+    //     age: [
+    //       {validator: checkAge, trigger: 'blur'}
+    //     ]
+    //   }
+    // }
+    // return {
+    //   forms: {
+    //     domains: [{
+    //       value: ''
+    //     }],
+    //     email: ''
+    //   }
+    // }
     return {
-      value: [],
-      data: gennerateData(),
-      renderFunc(h, option) {
-        return (<span>{option.key} - {option.label}</span>)
-      }
+      tableData: [{
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄',
+        tag: '公司'
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1517 弄',
+        tag: '家'
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1519 弄',
+        tag: '公司'
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1516 弄',
+        tag: '家'
+      }]
     }
   },
   methods: {
@@ -690,7 +922,7 @@ export default {
     formatTooltip(value) {
       return value / 100.0
     }
-    */
+
     handleExceed(files, fileList) {
       this.$message.warning(`当前限制选择3个文件，本次选了${files.length}, 一共选择了${files.length + fileList.length}个文件`)
     },
@@ -699,6 +931,13 @@ export default {
     },
     filterMethod(query, item) {
       return item.pinyin.indexOf(query) > -1
+    }
+  */
+    addDomain() {
+      this.forms.domains.push({
+        value: '',
+        key: Date.now()
+      })
     }
   }
   // mounted () {
