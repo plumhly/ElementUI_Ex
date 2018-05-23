@@ -533,9 +533,68 @@
     <!--<el-badge :value="120" :max="99">-->
       <!--<el-button size="small">评论</el-button>-->
     <!--</el-badge>-->
-    <el-badge :is-dot="true">
-      <el-button size="small">评论</el-button>
-    </el-badge>
+    <!--<el-badge :is-dot="true">-->
+      <!--<el-button size="small">评论</el-button>-->
+    <!--</el-badge>-->
+    <!--<el-alert-->
+      <!--title="消息提示文案"-->
+      <!--type="info">-->
+    <!--</el-alert>-->
+    <!--<el-button :plain="true" @click="open">消息</el-button>-->
+    <!--<el-button type="text" @click="open">点击</el-button>-->
+    <!--<el-menu-->
+      <!--:default-active="activeIndex"-->
+      <!--mode="horizontal"-->
+      <!--@select="handleSelect"-->
+      <!--background-color="#545c64"-->
+      <!--text-color="#fff"-->
+      <!--active-text-color="#ffd04b">-->
+      <!--<el-menu-item index="1">处理中心</el-menu-item>-->
+      <!--<el-submenu index="2">-->
+        <!--<template slot="title">我的工作台</template>-->
+        <!--<el-menu-item index="2-1">选项1</el-menu-item>-->
+        <!--<el-menu-item index="2-2">选项2</el-menu-item>-->
+        <!--<el-menu-item index="2-3">选项3</el-menu-item>-->
+        <!--<el-submenu index="2-4">-->
+          <!--<template slot="title">选项4</template>-->
+          <!--<el-menu-item index="2-4-1">选项1</el-menu-item>-->
+          <!--<el-menu-item index="2-4-2">选项2</el-menu-item>-->
+          <!--<el-menu-item index="2-4-3">选项3</el-menu-item>-->
+        <!--</el-submenu>-->
+      <!--</el-submenu>-->
+      <!--<el-menu-item index="3">消息中心</el-menu-item>-->
+      <!--<el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>-->
+    <!--</el-menu>-->
+    <el-menu
+      default-active="2"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      :collapse="true">
+      <el-submenu index="1">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>导航一</span>
+        </template>
+        <el-menu-item-group>
+          <template slot="title">分组一</template>
+          <el-menu-item index="1-1">选项1</el-menu-item>
+          <el-menu-item index="1-2">选项2</el-menu-item>
+        </el-menu-item-group>
+        <el-menu-item-group>
+          <template slot="title">分组二</template>
+          <el-menu-item index="1-3">选项3</el-menu-item>
+        </el-menu-item-group>
+        <el-submenu index="1-4">
+          <template slot="title">选项4</template>
+          <el-menu-item index="1-4-1">选项1</el-menu-item>
+        </el-submenu>
+      </el-submenu>
+      <el-menu-item index="4">
+        <i class="el-icon-setting"></i>
+        <span slot="title">导航四</span>
+      </el-menu-item>
+    </el-menu>
   </div>
 </template>
 
@@ -932,16 +991,19 @@ export default {
     //     shopId: '10333'
     //   }]
     // }
+    // return {
+    //   data: [{
+    //     label: '一级 1',
+    //     children: [{
+    //       label: '二级 1-1',
+    //       children: [{
+    //         label: '三级 1-1-1'
+    //       }]
+    //     }]
+    //   }]
+    // }
     return {
-      data: [{
-        label: '一级 1',
-        children: [{
-          label: '二级 1-1',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
-      }]
+
     }
   },
   methods: {
@@ -1055,12 +1117,96 @@ export default {
     //     key: Date.now()
     //   })
     // }，
-    handleEdit(index, row) {
-      console.log(index, row)
-    },
-    handleDelete(index, row) {
-      console.log(index, row)
-    }
+    // handleEdit(index, row) {
+    //   console.log(index, row)
+    // },
+    // handleDelete(index, row) {
+    //   console.log(index, row)
+    // }
+    /*
+    // open() {
+      // this.$message({
+      //   showClose: true,
+      //   message: '恭喜你，这是一天',
+      //   type: 'error'
+      // })
+      // this.$alert('这是一段内容', '标题名称', {
+      //   confirmButtonText: '确定',
+      //   callback: action => {
+      //     this.$message({
+      //       type: 'info',
+      //       message: `action: ${action}`
+      //     })
+      //   }
+      // })
+      // this.$confirm('此操作将永久删除该文件，是否继续？', '提示', {
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   type: 'warning'
+      // }).then(() => {
+      //   this.$message({
+      //     type: 'success',
+      //     message: '删除成功！'
+      //   })
+      // }).catch(() => {
+      //   this.$message({
+      //     type: 'info',
+      //     message: '已取消删除'
+      //   })
+      // })
+      // this.$prompt('请输入邮箱', '提示', {
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+      //   inputErrorMessage: '邮箱格式不正确'
+      // }).then(({value}) => {
+      //   this.$message({
+      //     type: 'success',
+      //     message: '你的邮箱是：' + value
+      //   })
+      // }).catch(() => {
+      //   this.$message({
+      //     type: 'info',
+      //     message: '取消输入'
+      //   })
+      // })
+      // const h = this.$createElement
+      // this.$msgbox({
+      //   title: '消息',
+      //   message: h('p', null, [
+      //     h('span', null, '内容可以是'),
+      //     h('i', {style: 'color: teal'}, 'VNode')
+      //   ]),
+      //   showCancelButton: true,
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   beforeClose: (action, instance, done) => {
+      //     if (action === 'confirm') {
+      //       instance.confirmButtonLoading = true
+      //       instance.confirmButtonText = '执行中....'
+      //       setTimeout(() => {
+      //         done()
+      //         setTimeout(() => {
+      //           instance.confirmButtonLoading = false
+      //         }, 300)
+      //       }, 3000)
+      //     } else {
+      //       done()
+      //     }
+      //   }
+      // }).then(action => {
+      //   this.$message({
+      //     type: 'info',
+      //     message: 'action: ' + action
+      //   })
+      // })
+      // this.$notify({
+      //   title: '偏移',
+      //   message: '这是一条带有偏移的提示消息',
+      //   offset: 50
+      // })
+    // }
+    */
   }
   // mounted () {
   //   this.restaurants = this.loadAll()
