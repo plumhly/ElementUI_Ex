@@ -565,36 +565,76 @@
       <!--<el-menu-item index="3">消息中心</el-menu-item>-->
       <!--<el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>-->
     <!--</el-menu>-->
-    <el-menu
-      default-active="2"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b"
-      :collapse="true">
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
-        </template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group>
-          <template slot="title">分组二</template>
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
-    </el-menu>
+    <!--<el-menu-->
+      <!--default-active="2"-->
+      <!--background-color="#545c64"-->
+      <!--text-color="#fff"-->
+      <!--active-text-color="#ffd04b"-->
+      <!--:collapse="true">-->
+      <!--<el-submenu index="1">-->
+        <!--<template slot="title">-->
+          <!--<i class="el-icon-location"></i>-->
+          <!--<span>导航一</span>-->
+        <!--</template>-->
+        <!--<el-menu-item-group>-->
+          <!--<template slot="title">分组一</template>-->
+          <!--<el-menu-item index="1-1">选项1</el-menu-item>-->
+          <!--<el-menu-item index="1-2">选项2</el-menu-item>-->
+        <!--</el-menu-item-group>-->
+        <!--<el-menu-item-group>-->
+          <!--<template slot="title">分组二</template>-->
+          <!--<el-menu-item index="1-3">选项3</el-menu-item>-->
+        <!--</el-menu-item-group>-->
+        <!--<el-submenu index="1-4">-->
+          <!--<template slot="title">选项4</template>-->
+          <!--<el-menu-item index="1-4-1">选项1</el-menu-item>-->
+        <!--</el-submenu>-->
+      <!--</el-submenu>-->
+      <!--<el-menu-item index="4">-->
+        <!--<i class="el-icon-setting"></i>-->
+        <!--<span slot="title">导航四</span>-->
+      <!--</el-menu-item>-->
+    <!--</el-menu>-->
+    <!--<el-tabs v-model="activeName" @tab-click="handleClick" type="card" :editable="true">-->
+      <!--<el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>-->
+      <!--<el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>-->
+      <!--<el-tab-pane>-->
+        <!--<span slot="label"><i class="el-icon-date"></i>我的行程</span>-->
+        <!--我的行程-->
+      <!--</el-tab-pane>-->
+    <!--</el-tabs>-->
+    <!--<el-breadcrumb separator-class="el-icon-arrow-right">-->
+      <!--<el-breadcrumb-item :to="{path: '/'}">首页</el-breadcrumb-item>-->
+      <!--<el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>-->
+    <!--</el-breadcrumb>-->
+    <!--<el-dropdown>-->
+      <!--<span class="el-dropdown-link">-->
+        <!--下拉菜单<i class="el-icon-arrow-down el-icon-right"></i>-->
+      <!--</span>-->
+      <!--<el-dropdown-menu slot="dropdown">-->
+        <!--<el-dropdown-item>黄金糕</el-dropdown-item>-->
+        <!--<el-dropdown-item>黄金糕</el-dropdown-item>-->
+        <!--<el-dropdown-item disabled="">黄金糕</el-dropdown-item>-->
+        <!--<el-dropdown-item divided="">黄金糕</el-dropdown-item>-->
+      <!--</el-dropdown-menu>-->
+    <!--</el-dropdown>-->
+    <!--<el-steps :active="active" finish-status="success" simple>-->
+      <!--<el-step title="步骤 1"></el-step>-->
+      <!--<el-step title="步骤 2"></el-step>-->
+      <!--<el-step title="步骤 3"></el-step>-->
+    <!--</el-steps>-->
+    <!--<el-button style="margin-top: 12px" @click="next">下一步</el-button>-->
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleClose">
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -1002,8 +1042,14 @@ export default {
     //     }]
     //   }]
     // }
+    // return {
+    //   activeName: 'first'
+    // }
+    // return {
+    //   active: 0
+    // }
     return {
-
+      dialogVisible: true
     }
   },
   methods: {
@@ -1207,6 +1253,18 @@ export default {
       // })
     // }
     */
+    // next() {
+    //   if (this.active++ > 2) {
+    //     this.active = 0
+    //   }
+    // }
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done()
+        })
+        .catch(_ => {})
+    }
   }
   // mounted () {
   //   this.restaurants = this.loadAll()
